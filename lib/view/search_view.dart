@@ -34,8 +34,7 @@ class SearchView extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w400,
                 ),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 20, horizontal: 10)),
+                contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 10)),
           ),
         ),
       ),
