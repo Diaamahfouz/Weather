@@ -36,8 +36,28 @@ class HomeView extends StatelessWidget {
       ),
       body: BlocBuilder<GetWeatherCubit, WeatherStates>(
         builder: (context, state) {
-          if (state is InitialState) {
+          if (state is WeatherInitial) {
             return const NoWeatherBody();
+          } else if (state is WeatherLoading) {
+            return Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.orange,
+                    Colors.blue,
+                  ],
+                ),
+              ),
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              ),
+            );
           } else if (state is WeatherSucces) {
             // ignore: prefer_const_constructors
             return WeatherInfo();

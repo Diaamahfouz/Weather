@@ -41,6 +41,7 @@ class SearchView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: TextField(
+            cursorColor: Colors.black,
             onSubmitted: (value) {
               GetWeatherCubit getWeatherCubit =
                   BlocProvider.of<GetWeatherCubit>(context);
